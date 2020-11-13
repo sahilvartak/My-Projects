@@ -7,6 +7,7 @@ Precondtion:
 Flight simulator shall be running before running the exe
 Exe shall have access to microphone
 
+Press T and say the command
 
 Dependency
 Python 3.6
