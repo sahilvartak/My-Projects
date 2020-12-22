@@ -1,0 +1,66 @@
+C51 COMPILER V9.50a   RX                                                                   02/08/2014 15:48:56 PAGE 1   
+
+
+C51 COMPILER V9.50a, COMPILATION OF MODULE RX
+OBJECT MODULE PLACED IN rx.OBJ
+COMPILER INVOKED BY: E:\Keil\C51\BIN\C51.EXE rx.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          sbit decoder1 = P3^0;
+   3          sbit decoder2 = P3^1;
+   4          sbit decoder3 = P3^2;
+   5          sbit decoder4 = P3^3;
+   6          
+   7          void main(void)
+   8          {
+   9   1        P3=0xFF;
+  10   1        P1=0x00;
+  11   1        while(1)
+  12   1        {
+  13   2          if(decoder1==0 && decoder2==1 && decoder3==0 && decoder4==1)
+  14   2          {
+  15   3            P1=0x0A;
+  16   3          }
+  17   2          
+  18   2          if(decoder1==1 && decoder2==0 && decoder3==1 && decoder4==0)
+  19   2          {
+  20   3            P1=0x05;
+  21   3          }
+  22   2          
+  23   2            if(decoder1==0 && decoder2==1 && decoder3==1 && decoder4==0)
+  24   2          {
+  25   3            P1=0x09;
+  26   3          }
+  27   2          
+  28   2            if(decoder1==1 && decoder2==0 && decoder3==0 && decoder4==1)
+  29   2          {
+  30   3            P1=0x06;
+  31   3          }
+  32   2          
+  33   2            if(decoder1==1 && decoder2==1 && decoder3==1 && decoder4==0)
+  34   2          {
+  35   3            P1=0x10;
+  36   3          }
+  37   2          
+  38   2          if(decoder1==1 && decoder2==1 && decoder3==1 && decoder4==1)
+  39   2          {
+  40   3            P1=0x00;
+  41   3          }
+  42   2        }
+  43   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     98    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
